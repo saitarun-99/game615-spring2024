@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class leopardscript : MonoBehaviour
 {
-    public GameObject dragonPrefab;
-    // Start is called before the first frame update
+    public GameObject ElkPrefab;
     void Start()
     {
 
@@ -16,12 +15,15 @@ public class leopardscript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.transform.position = gameObject.transform.position + gameObject.transform.forward * 25;
+            float distanceToMove = 675f; // Distance to move per second
+            float movementPerFrame = distanceToMove * Time.deltaTime;
+            gameObject.transform.position += gameObject.transform.forward * movementPerFrame;
         }
     }
-        private void OnTriggerEnter(Collider other)
+
+    /*private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("dragon"))
+            if (other.CompareTag("playa"))
             {
                 Debug.Log(other.gameObject.name);
                 Renderer rend = gameObject.GetComponent<Renderer>();
@@ -29,7 +31,7 @@ public class leopardscript : MonoBehaviour
 
                 for (int i = 0; i < 200; i++)
                 {
-                    GameObject confetto = Instantiate(dragonPrefab, gameObject.transform.position, Quaternion.identity);
+                    GameObject confetto = Instantiate(ElkPrefab, gameObject.transform.position, Quaternion.identity);
                     confetto.transform.Rotate(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
                     Rigidbody confettoRB = confetto.GetComponent<Rigidbody>();
                     confettoRB.AddForce(confetto.transform.forward * Random.Range(10, 1000));
@@ -38,7 +40,7 @@ public class leopardscript : MonoBehaviour
                 Destroy(gameObject);
 
             }
-        }
+        }*/
 
     }
 
