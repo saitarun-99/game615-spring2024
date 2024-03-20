@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using System;
 public class Planescript : MonoBehaviour
 {
     int score = 0;
@@ -63,6 +64,7 @@ public class Planescript : MonoBehaviour
         {
             score++;
             scoreText.text = "Score: " + score.ToString();
+            //Console.Write("Hello World! ");
         }
     }
 }
