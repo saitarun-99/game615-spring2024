@@ -24,6 +24,7 @@ public class Planescript : MonoBehaviour
         float vAxis = Input.GetAxis("Vertical");
         //Debug.Log(Time.deltaTime);
         Vector3 amountToRotate = new Vector3(0, 0, 0);
+        // distance=speed x time
         amountToRotate.x = -vAxis * rotateSpeed * Time.deltaTime;
         amountToRotate.z = -hAxis * rotateSpeed * Time.deltaTime;
 
